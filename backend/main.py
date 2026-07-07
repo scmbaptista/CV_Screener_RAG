@@ -117,25 +117,6 @@ class CandidateInfo(BaseModel):
     education: List[str]
     years_experience: int
 
-class MatchRequest(BaseModel):
-    job_description: str
-    cv_text: Optional[str] = None
-
-class MatchResponse(BaseModel):
-    overall_score: float
-    skill_match_score: float
-    experience_match_score: float
-    semantic_similarity: float
-    education_match_score: float
-    matched_skills: List[str]
-    missing_skills: List[str]
-    extra_skills: List[str]
-    cv_skills_found: List[str]
-    job_skills_required: List[str]
-    experience_analysis: dict
-    education_analysis: dict
-    recommendation: str
-
 # ───────────────────────────────────────────────
 # API ENDPOINTS
 # ───────────────────────────────────────────────
@@ -277,6 +258,7 @@ async def list_candidates():
         raise HTTPException(status_code=500, detail=S.get("error_500_candidates", error=str(e)))
 
 
+# ───────────────────────────────────────────────
 # FRONTEND SERVING
 # ───────────────────────────────────────────────
 
@@ -284,7 +266,6 @@ async def list_candidates():
 frontend_dir = Path(__file__).parent.parent / "frontend"
 if frontend_dir.exists():
     app.mount("/static", StaticFiles(directory=str(frontend_dir)), name="static")
-
 
 @app.get("/")
 async def serve_frontend():
