@@ -66,26 +66,28 @@ All answers are **grounded strictly in the CV database** — the system retrieve
 
 ```
 cv-screener-rag/
-├── generate_cvs.py              # Synthetic CV dataset generator (30 PDFs)
-├── requirements.txt             # Python dependencies
-├── start.sh                     # One-command startup script
-├── .env.example                 # Configuration template
-│
+├── README.md
+├── generate_cvs.py
+├── requirements.txt
+├── start.sh
+├── .env.example
 ├── backend/
-│   ├── main.py                  # FastAPI app & REST endpoints
-│   ├── rag_engine.py            # Core RAG pipeline (ingest → retrieve → generate)
-│   ├── pdf_processor.py         # PDF text extraction + section parsing
-│   └── config.py                # Centralized configuration
-│
+│   ├── main.py
+│   ├── rag_engine.py
+│   ├── pdf_processor.py
+│   ├── config.py
+│   └── strings_loader.py
 ├── frontend/
-│   └── index.html               # Single-page chat UI (no build step)
-│
-├── data/cvs/                    # Generated synthetic CVs (PDFs)
-├── vectorstore/                 # ChromaDB persistent storage
-│
-└── docs/
-    ├── ARCHITECTURE.md          # Deep-dive architecture documentation
-    └── WHAT_WAS_DONE.md         # Implementation details & design decisions
+│   ├── index.html
+│   ├── chat.js
+│   └── chat.css
+├── data/
+│   ├── cvs/              # 30 PDFs gerados
+│   ├── cv_data.json      # Dados de geração
+│   └── strings.json      # Strings centralizadas
+├── docs/
+│   └── ARCHITECTURE.md
+└── vectorstore/          # ChromaDB
 ```
 
 ---
