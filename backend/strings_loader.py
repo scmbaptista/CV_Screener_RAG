@@ -20,8 +20,7 @@ def load_strings() -> Dict[str, Any]:
 
     if not _STRINGS_FILE.exists():
         raise FileNotFoundError(
-            f"Strings file not found: {_STRINGS_FILE}
-"
+            f"Strings file not found: {_STRINGS_FILE}\n"
             f"Please ensure data/strings.json exists."
         )
 
@@ -36,7 +35,7 @@ def get(module: str, key: str, **kwargs) -> str:
     Get a string by module and key.
 
     Args:
-        module: Module name (e.g., 'rag_engine', 'main', 'matcher')
+        module: Module name (e.g., 'rag_engine', 'main', 'pdf_processor')
         key: String key within the module
         **kwargs: Format arguments for the string
 
@@ -67,11 +66,6 @@ class RAGStrings:
     @staticmethod
     def get(key: str, **kwargs) -> str:
         return get("rag_engine", key, **kwargs)
-
-class MatcherStrings:
-    @staticmethod
-    def get(key: str, **kwargs) -> str:
-        return get("matcher", key, **kwargs)
 
 class MainStrings:
     @staticmethod
