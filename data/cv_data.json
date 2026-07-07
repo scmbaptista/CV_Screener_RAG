@@ -1,0 +1,348 @@
+{
+  "roles": [
+    "Full-Stack Developer",
+    "Backend Engineer",
+    "Frontend Developer",
+    "DevOps Engineer",
+    "Data Scientist",
+    "Machine Learning Engineer",
+    "Cloud Architect",
+    "Site Reliability Engineer",
+    "Mobile Developer",
+    "Product Manager",
+    "UI/UX Designer",
+    "Security Engineer",
+    "Data Engineer",
+    "QA Automation Engineer",
+    "Technical Lead",
+    "Software Architect",
+    "Blockchain Developer",
+    "AI Research Scientist",
+    "Systems Administrator",
+    "Database Administrator",
+    "Scrum Master",
+    "Business Analyst",
+    "Solutions Architect",
+    "Platform Engineer",
+    "Embedded Systems Engineer",
+    "Game Developer",
+    "AR/VR Developer"
+  ],
+  "companies": [
+    "TechNova Solutions",
+    "CloudScale Systems",
+    "DataPulse Analytics",
+    "ByteForge Industries",
+    "NexGen Digital",
+    "QuantumSoft Labs",
+    "Aether Dynamics",
+    "Stellar Code Works",
+    "Prism Technologies",
+    "Vertex Innovations",
+    "Horizon Computing",
+    "Cipher Security",
+    "Flux Automation",
+    "Zenith AI Labs",
+    "Orbital Systems",
+    "Synapse Networks",
+    "Helix Data Corp",
+    "Katalyst Software",
+    "Vortex Computing",
+    "Pinnacle Tech",
+    "Catalyst Digital",
+    "FusionWorks",
+    "Nebula Cloud",
+    "Apex Systems",
+    "Titan Engineering"
+  ],
+  "universities": [
+    {
+      "name": "Universitat Politècnica de Catalunya",
+      "abbr": "UPC",
+      "location": "Barcelona, Spain"
+    },
+    {
+      "name": "Technical University of Munich",
+      "abbr": "TUM",
+      "location": "Munich, Germany"
+    },
+    {
+      "name": "Delft University of Technology",
+      "abbr": "TU Delft",
+      "location": "Delft, Netherlands"
+    },
+    {
+      "name": "Politecnico di Milano",
+      "abbr": "PoliMi",
+      "location": "Milan, Italy"
+    },
+    {
+      "name": "KTH Royal Institute of Technology",
+      "abbr": "KTH",
+      "location": "Stockholm, Sweden"
+    },
+    {
+      "name": "École Polytechnique",
+      "abbr": "L'X",
+      "location": "Palaiseau, France"
+    },
+    {
+      "name": "Imperial College London",
+      "abbr": "ICL",
+      "location": "London, UK"
+    },
+    {
+      "name": "ETH Zürich",
+      "abbr": "ETH",
+      "location": "Zürich, Switzerland"
+    },
+    {
+      "name": "University of Lisbon",
+      "abbr": "ULisboa",
+      "location": "Lisbon, Portugal"
+    },
+    {
+      "name": "University of Porto",
+      "abbr": "UP",
+      "location": "Porto, Portugal"
+    },
+    {
+      "name": "University of Coimbra",
+      "abbr": "UC",
+      "location": "Coimbra, Portugal"
+    },
+    {
+      "name": "NOVA University Lisbon",
+      "abbr": "NOVA",
+      "location": "Lisbon, Portugal"
+    },
+    {
+      "name": "Instituto Superior Técnico",
+      "abbr": "IST",
+      "location": "Lisbon, Portugal"
+    },
+    {
+      "name": "University of Warsaw",
+      "abbr": "UW",
+      "location": "Warsaw, Poland"
+    },
+    {
+      "name": "Charles University",
+      "abbr": "CUNI",
+      "location": "Prague, Czech Republic"
+    },
+    {
+      "name": "Eötvös Loránd University",
+      "abbr": "ELTE",
+      "location": "Budapest, Hungary"
+    },
+    {
+      "name": "University of Vienna",
+      "abbr": "UniVie",
+      "location": "Vienna, Austria"
+    },
+    {
+      "name": "Trinity College Dublin",
+      "abbr": "TCD",
+      "location": "Dublin, Ireland"
+    },
+    {
+      "name": "University of Copenhagen",
+      "abbr": "UCPH",
+      "location": "Copenhagen, Denmark"
+    },
+    {
+      "name": "Aalto University",
+      "abbr": "Aalto",
+      "location": "Espoo, Finland"
+    }
+  ],
+  "skills": [
+    "Python",
+    "JavaScript",
+    "TypeScript",
+    "Java",
+    "C++",
+    "Go",
+    "Rust",
+    "Ruby",
+    "React",
+    "Vue.js",
+    "Angular",
+    "Node.js",
+    "Django",
+    "Flask",
+    "FastAPI",
+    "AWS",
+    "Azure",
+    "GCP",
+    "Docker",
+    "Kubernetes",
+    "Terraform",
+    "CI/CD",
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
+    "Elasticsearch",
+    "Kafka",
+    "Machine Learning",
+    "TensorFlow",
+    "PyTorch",
+    "scikit-learn",
+    "Pandas",
+    "GraphQL",
+    "REST API",
+    "gRPC",
+    "WebSocket",
+    "Microservices",
+    "Linux",
+    "Bash",
+    "Git",
+    "GitHub Actions",
+    "Jenkins",
+    "GitLab CI",
+    "React Native",
+    "Flutter",
+    "Swift",
+    "Kotlin",
+    "Android",
+    "iOS",
+    "Cybersecurity",
+    "Penetration Testing",
+    "OWASP",
+    "SIEM",
+    "Zero Trust",
+    "Agile",
+    "Scrum",
+    "Kanban",
+    "Jira",
+    "Confluence",
+    "Figma",
+    "Miro"
+  ],
+  "languages": [
+    "Portuguese",
+    "English",
+    "Spanish",
+    "French",
+    "German",
+    "Italian",
+    "Dutch",
+    "Polish",
+    "Czech",
+    "Swedish",
+    "Danish",
+    "Finnish",
+    "Greek",
+    "Romanian",
+    "Hungarian"
+  ],
+  "summary_templates": [
+    "Results-driven {role} with {years}+ years of experience building scalable {domain} solutions. Passionate about {tech} and delivering high-quality code. Proven track record of leading cross-functional teams and driving technical excellence.",
+    "Creative {role} specializing in {domain} with a strong foundation in {tech}. Experienced in agile environments and committed to continuous learning. Known for translating complex requirements into elegant, maintainable solutions.",
+    "Detail-oriented {role} with {years} years of hands-on experience in {domain}. Expert in {tech} with a passion for optimizing performance and improving user experience. Strong problem-solver with excellent communication skills.",
+    "Innovative {role} passionate about {domain} and modern {tech} stacks. {years}+ years delivering production-grade systems. Advocate for clean code, test-driven development, and DevOps best practices.",
+    "Strategic {role} with deep expertise in {domain} and {tech}. Combines technical depth with business acumen to deliver solutions that drive growth. Mentor and team player with experience in distributed systems."
+  ],
+  "domains": [
+    "web applications",
+    "cloud infrastructure",
+    "data platforms",
+    "mobile ecosystems",
+    "enterprise software",
+    "fintech solutions",
+    "e-commerce systems"
+  ],
+  "degree_types": [
+    "BSc",
+    "MSc",
+    "PhD",
+    "BEng",
+    "MEng"
+  ],
+  "fields": [
+    "Computer Science",
+    "Software Engineering",
+    "Data Science",
+    "Information Systems",
+    "Artificial Intelligence",
+    "Cybersecurity",
+    "Electrical Engineering",
+    "Mathematics"
+  ],
+  "certifications": [
+    "AWS Solutions Architect",
+    "Certified Kubernetes Administrator",
+    "Google Cloud Professional",
+    "Azure DevOps Engineer",
+    "TensorFlow Developer",
+    "Scrum Master (PSM I)",
+    "CompTIA Security+",
+    "CISSP",
+    "MongoDB Certified DBA",
+    "HashiCorp Terraform Associate"
+  ],
+  "countries": [
+    "Portugal",
+    "Spain",
+    "Germany",
+    "Netherlands",
+    "Italy",
+    "France",
+    "UK",
+    "Poland",
+    "Czech Republic",
+    "Sweden",
+    "Denmark",
+    "Ireland",
+    "Austria",
+    "Switzerland",
+    "Belgium",
+    "Finland",
+    "Norway"
+  ],
+  "experience_descriptions": [
+    "Led development of {platform} platform serving {users} users. Implemented {architecture}.",
+    "Architected and deployed {system} reducing deployment time by {pct}%.",
+    "Mentored team of {team_size} developers. Conducted code reviews and established coding standards.",
+    "Optimized {target} resulting in {pct}% improvement.",
+    "Collaborated with {team} teams to deliver {product}.",
+    "Implemented {security} for enterprise security compliance."
+  ],
+  "architectures": [
+    "microservices architecture",
+    "event-driven design",
+    "serverless functions",
+    "containerized deployments"
+  ],
+  "systems": [
+    "CI/CD pipelines",
+    "data pipelines",
+    "API gateways",
+    "monitoring stacks"
+  ],
+  "optimization_targets": [
+    "database queries",
+    "frontend bundle size",
+    "infrastructure costs",
+    "ML inference latency"
+  ],
+  "collaboration_teams": [
+    "product",
+    "design",
+    "data science",
+    "security"
+  ],
+  "products": [
+    "SaaS platform",
+    "mobile app",
+    "internal tooling",
+    "customer dashboard"
+  ],
+  "security_systems": [
+    "OAuth2/OIDC",
+    "RBAC",
+    "end-to-end encryption",
+    "zero-trust networking"
+  ]
+}

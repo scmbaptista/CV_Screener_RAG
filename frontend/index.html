@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Screener RAG - AI-Powered Recruitment</title>
+    <link rel="stylesheet" href="/static/chat.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">AI</div>
+            <div class="header-title">
+                <h1>CV Screener RAG</h1>
+                <p>AI-Powered Recruitment Assistant</p>
+            </div>
+        </div>
+        <nav style="display: flex; gap: 0.5rem;">
+            <a href="/" style="padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none; color: white; background: #2563eb; font-size: 0.9rem; font-weight: 500;">Chat</a>
+            <a href="/matcher.html" style="padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none; color: #64748b; font-size: 0.9rem; font-weight: 500; transition: all 0.2s;">Matcher</a>
+        </nav>
+        <div class="header-stats">
+            <span class="stat-badge" id="doc-count">Loading...</span>
+            <span class="stat-badge" id="chunk-count">Loading...</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Try asking</h3>
+                <div class="example-questions">
+                    <button class="example-btn" onclick="askExample(this)">Who has experience with Python?</button>
+                    <button class="example-btn" onclick="askExample(this)">Which candidate graduated from UPC?</button>
+                    <button class="example-btn" onclick="askExample(this)">Summarize the profile of Jane Doe</button>
+                    <button class="example-btn" onclick="askExample(this)">Find candidates with AWS and Kubernetes skills</button>
+                    <button class="example-btn" onclick="askExample(this)">Who has a PhD in Artificial Intelligence?</button>
+                    <button class="example-btn" onclick="askExample(this)">List all candidates with 5+ years of experience</button>
+                    <button class="example-btn" onclick="askExample(this)">Which candidates speak German fluently?</button>
+                    <button class="example-btn" onclick="askExample(this)">Find a backend engineer with cloud experience</button>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3>About</h3>
+                <div class="info-box">
+                    <strong>Retrieval-Augmented Generation</strong>
+                    This system uses semantic search over 30 synthetic CVs to find relevant candidates, then uses an LLM to generate grounded answers.
+                    <br><br>
+                    <strong>Privacy-safe:</strong> All CVs are synthetically generated. No real personal data is used.
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-container">
+            <div class="error-toast" id="error-toast"></div>
+            <div class="messages-area" id="messages-area">
+                <div class="welcome-message">
+                    <h2>Welcome to CV Screener</h2>
+                    <p>Ask me anything about our candidate pool. I can find skills, experience, education, and more using AI-powered semantic search over 30 synthetic resumes.</p>
+                </div>
+            </div>
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <textarea class="chat-input" id="chat-input" placeholder="Ask about candidates... (e.g., 'Who knows Python and Docker?')" rows="1" onkeydown="handleKeydown(event)" oninput="autoResize(this)"></textarea>
+                </div>
+                <button class="send-btn" id="send-btn" onclick="sendMessage()" title="Send message">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/chat.js"></script>
+</body>
+</html>
