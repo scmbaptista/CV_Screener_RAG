@@ -33,7 +33,7 @@ async def lifespan(app: FastAPI):
     print("\n  LLM Provider Status:")
     or_key = config.OPENROUTER_API_KEY
     print(f"    OpenRouter API Key: {'✅ CONFIGURED' if or_key else '❌ NOT SET'}")
-    print(f"    OpenRouter Model:   {config.LLM_MODEL}")    
+    print(f"    OpenRouter Model:   {config.LLM_MODEL}")
     print(S.get("config_warning"))
     print(S.get("config_fix"))
 
