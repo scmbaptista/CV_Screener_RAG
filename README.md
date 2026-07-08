@@ -65,29 +65,28 @@ All answers are **grounded strictly in the CV database** — the system retrieve
 ## 📁 Project Structure
 
 ```
-cv-screener-rag/
-├── README.md
-├── generate_cvs.py
-├── requirements.txt
-├── start.sh
-├── .env.example
-├── backend/
-│   ├── main.py
-│   ├── rag_engine.py
-│   ├── pdf_processor.py
+CV_Screener_RAG/
+├── 📁 backend/
+│   ├── __init__.py
+│   ├── main.py          ← bootstrap + lifespan
+│   ├── state.py         ← shared rag_engine
+│   ├── routes.py        ← todos os endpoints (controller)
 │   ├── config.py
-│   └── strings_loader.py
-├── frontend/
+│   ├── dictionary.py
+│   ├── pdf_processor.py
+│   ├── rag_engine.py
+│   └── 📁 data/
+│       └── 📁 cvs/
+│           └── *.pdf
+├── 📁 frontend/
 │   ├── index.html
-│   ├── chat.js
-│   └── chat.css
-├── data/
-│   ├── cvs/              # 30 PDFs gerados
-│   ├── cv_data.json      # Dados de geração
-│   └── strings.json      # Strings centralizadas
-├── docs/
-│   └── ARCHITECTURE.md
-└── vectorstore/          # ChromaDB
+│   ├── chat.css
+│   └── chat.js
+├── 📁 docs/
+├── 📁 vectorstore/
+├── .env
+├── requirements.txt
+└── start.sh
 ```
 
 ---

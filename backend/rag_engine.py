@@ -1,12 +1,6 @@
 """
 RAG Engine Module
 Core retrieval-augmented generation pipeline for the CV Screener.
-
-Architecture:
-    1. Ingestion: PDF -> Text -> Sections -> Chunks -> Embeddings -> ChromaDB
-    2. Retrieval: Query -> Embedding -> Semantic Search -> Top-K Chunks
-    3. Generation: Query + Context -> LLM -> Answer + Source Citations
-    4. Validation: Relevance scoring + keyword matching to prevent false positives
 """
 
 import json
@@ -19,8 +13,7 @@ from pathlib import Path
 import warnings
 warnings.filterwarnings("ignore")
 import logging
-for logger_name in ["chromadb", "chromadb.telemetry", "chromadb.telemetry.product", 
-                    "chromadb.config", "chromadb.segment", "chromadb.ingest"]:
+for logger_name in ["chromadb", "chromadb.telemetry", "chromadb.telemetry.product", "chromadb.config", "chromadb.segment", "chromadb.ingest"]:
     logging.getLogger(logger_name).setLevel(logging.CRITICAL)
     logging.getLogger(logger_name).propagate = False
     logging.getLogger(logger_name).handlers = []
@@ -32,7 +25,7 @@ from sentence_transformers import SentenceTransformer
 
 from pdf_processor import CVDocument, process_all_cvs
 import config
-from strings_loader import RAGStrings as S
+from dictionary import RAGStrings as S
 
 
 class Chunk:
@@ -63,7 +56,6 @@ class RAGEngine:
         self.embedding_dim = self.embedding_model.get_sentence_embedding_dimension()
 
         # Initialize ChromaDB with persistent storage
-        # Telemetry disabled via ANONYMIZED_TELEMETRY=False env var
         self.chroma_client = chromadb.PersistentClient(
             path=str(config.VECTORSTORE_DIR)
         )
@@ -387,20 +379,6 @@ class RAGEngine:
             data = response.json()
             return data["choices"][0]["message"]["content"]
 
-    async def _call_google_gemini(self, system_prompt: str, user_prompt: str) -> str:
-        """Call Google AI Studio (Gemini) as fallback."""
-        import base64
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{config.GOOGLE_MODEL}:generateContent?key={config.GOOGLE_API_KEY}"
-        payload = {
-            "contents": [{"role": "user", "parts": [{"text": system_prompt + "\n\n" + user_prompt}]}],
-            "generationConfig": {"temperature": config.LLM_TEMPERATURE, "maxOutputTokens": config.LLM_MAX_TOKENS}
-        }
-        async with httpx.AsyncClient(timeout=60.0) as client:
-            response = await client.post(url, json=payload)
-            response.raise_for_status()
-            data = response.json()
-            return data["candidates"][0]["content"]["parts"][0]["text"]
-
     async def generate_answer(self, query: str, context_chunks: List[Dict[str, Any]]) -> Tuple[str, List[str]]:
         """
         Generate an answer using the LLM with retrieved context.
@@ -415,10 +393,6 @@ class RAGEngine:
                 S.get("not_found_answer_no_context"),
                 []
             )
-
-        # No API keys configured at all
-        if not config.OPENROUTER_API_KEY and not config.GOOGLE_API_KEY:
-            return self._fallback_answer(query, context_chunks)
 
         system_prompt = self._build_system_prompt()
         user_prompt = self._build_user_prompt(query, context_chunks)
@@ -462,8 +436,7 @@ class RAGEngine:
                         "Solutions:\n"
                         "1. Wait until tomorrow for the daily reset, OR\n"
                         "2. Add $10 of credits to OpenRouter (raises limit to 1000/day forever), OR\n"
-                        "3. Add GOOGLE_API_KEY to .env for Google AI Studio fallback (free), OR\n"
-                        "4. Use the system without LLM — retrieval-only works perfectly\n\n"
+                        "3. Use the system without LLM — retrieval-only works perfectly\n\n"
                         "Meanwhile, here is the retrieval-only result:"
                     )
                     print("OpenRouter 429: Rate limit hit (free tier = 50 requests/day).")
@@ -475,15 +448,6 @@ class RAGEngine:
             except Exception as e:
                 print(f"OpenRouter unexpected error: {e}. Trying fallback...")
                 # Fall through to next provider
-
-        # Try Google AI Studio as fallback
-        if config.GOOGLE_API_KEY:
-            try:
-                answer = await self._call_google_gemini(system_prompt, user_prompt)
-                sources = list(set(chunk["metadata"]["candidate_name"] for chunk in context_chunks))
-                return answer, sources
-            except Exception as e:
-                print(f"Google AI Studio error: {e}")
 
         # Ultimate fallback: retrieval-only
         print("All LLM providers failed. Using retrieval-only fallback.")

@@ -9,7 +9,7 @@ import re
 from pathlib import Path
 from typing import List, Dict, Any
 import pdfplumber
-from strings_loader import PDFStrings as S
+from dictionary import PDFStrings as S
 
 
 class CVDocument:
