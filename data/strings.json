@@ -17,7 +17,7 @@
     "error_llm": "LLM API error: {error}. Falling back to retrieval-only answer.",
     "error_404": "[LLM Error: Model not found (404)]\n\nThe model '{model}' is not available on OpenRouter.\nThis usually means the free model was removed or renamed.\n\nTo fix this:\n1. Visit https://openrouter.ai/models and filter by 'Free'\n2. Pick a working model (e.g., meta-llama/llama-3.3-70b-instruct:free)\n3. Update LLM_MODEL in your .env file\n\nMeanwhile, here is the retrieval-only result:",
     "error_401": "[LLM Error: Invalid API key (401)] — Check your OPENROUTER_API_KEY in .env",
-    "error_429": "[LLM Error: Rate limit exceeded (429)]\n\nThe OpenRouter free tier allows 50 requests per day.\nYou have reached this limit.\n\nSolutions:\n1. Wait until tomorrow for the daily reset, OR\n2. Add $10 of credits to OpenRouter (raises limit to 1000/day forever), OR\n3. Add GOOGLE_API_KEY to .env for Google AI Studio fallback (free), OR\n4. Use the system without LLM — retrieval-only works perfectly\n\nMeanwhile, here is the retrieval-only result:",
+    "error_429": "[LLM Error: Rate limit exceeded (429)]\n\nThe OpenRouter free tier allows 50 requests per day.\nYou have reached this limit.\n\nSolutions:\n1. Wait until tomorrow for the daily reset, OR\n2. Add $10 of credits to OpenRouter (raises limit to 1000/day forever), OR\n3. Use the system without LLM — retrieval-only works perfectly\n\nMeanwhile, here is the retrieval-only result:",
     "error_openrouter_generic": "OpenRouter error {status}: {text}",
     "error_openrouter_unexpected": "OpenRouter unexpected error: {error}. Trying fallback...",
     "error_google": "Google AI Studio error: {error}",
@@ -49,7 +49,6 @@
     "config_google_model": "    Google Model:",
     "config_warning": "    ⚠️  WARNING: No LLM API keys configured. Running in retrieval-only mode.",
     "config_fix": "    Create a .env file with OPENROUTER_API_KEY=sk-or-v1-...",
-    "config_or": "    Or GOOGLE_API_KEY=... for Google AI Studio fallback.",
     "llm_status_full": "full_llm",
     "llm_status_retrieval": "retrieval_only"
   },
